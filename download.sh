@@ -48,4 +48,6 @@ for arch in "${arches[@]}"; do
 		echo
 		echo 'CMD ["/sbin/init"]'
 	} > "$bashbrewArch/Dockerfile"
+
+	echo "$bashbrewArch" >> supported-arches
 done
