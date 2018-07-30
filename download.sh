@@ -8,6 +8,7 @@ cd "$dir"
 version="$(curl -fsSL 'http://download.cirros-cloud.net/version/released')"
 
 # map Bashbrew arches to CirrOS arches
+# https://git.launchpad.net/cirros/tree/conf/
 arches=(
 	'amd64=x86_64'
 	'arm32v5=arm' # https://git.launchpad.net/cirros/tree/conf/buildroot-arm.config?id=0.4.0#n47
