@@ -8,13 +8,10 @@ cd "$dir"
 gitHubUrl='https://github.com/tianon/docker-brew-cirros'
 gitFetch='refs/heads/dist'
 
-#rawGitUrl="$gitHubUrl/raw"
-rawGitUrl="${gitHubUrl//github.com/cdn.rawgit.com}" # we grab tiny files, and rawgit's CDN is more consistently speedy on a cache hit than GitHub's
-
 commit="$(git ls-remote "$gitHubUrl.git" "$gitFetch" | cut -d$'\t' -f1)"
 
-version="$(curl -fsSL "$rawGitUrl/$commit/arches/version")"
-arches="$(curl -fsSL "$rawGitUrl/$commit/arches/supported-arches")"
+version="$(curl -fsSL "$gitHubUrl/raw/$commit/arches/version")"
+arches="$(curl -fsSL "$gitHubUrl/raw/$commit/arches/supported-arches")"
 
 # prints "$2$1$3$1...$N"
 join() {
