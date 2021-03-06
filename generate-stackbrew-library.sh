@@ -22,7 +22,7 @@ join() {
 
 selfCommit="$(git log --format='format:%H' -1 "$self")"
 cat <<-EOH
-# this file is generated via $gitHubUrl/blob/$selfCommit/$self
+# this file is generated via $gitHubUrl/blob/$selfCommit/$(basename "$self")
 
 Maintainers: Tianon Gravi <admwiggin@gmail.com> (@tianon)
 GitRepo: $gitHubUrl.git
