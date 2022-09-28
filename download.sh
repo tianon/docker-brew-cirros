@@ -26,8 +26,7 @@ tags=( $(
 
 version=
 for tag in "${tags[@]}"; do
-	# "curl --head" on the artifacts directly results in "403 Forbidden" ...
-	if curl -fsSL "https://github.com/cirros-dev/cirros/releases/tag/$tag" 2>/dev/null | tac|tac | grep -qF "cirros-${tag}-x86_64-lxc.tar.xz"; then
+	if curl -fsSL --head "https://github.com/cirros-dev/cirros/releases/download/$tag/cirros-$tag-x86_64-lxc.tar.xz" -o /dev/null; then
 		version="$tag"
 		break
 	fi
