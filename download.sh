@@ -5,7 +5,7 @@ set -Eeuo pipefail
 # https://github.com/cirros-dev/cirros/tree/master/conf
 arches=(
 	'amd64=x86_64'
-	'arm32v5=arm' # https://github.com/cirros-dev/cirros/blob/0.4.0/conf/buildroot-arm.config#L47
+	'arm32v7=arm' # https://github.com/cirros-dev/cirros/blob/0.6.2/conf/buildroot-arm.config#L94
 	'arm64v8=aarch64'
 	'ppc64le'
 )
